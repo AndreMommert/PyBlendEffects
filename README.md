@@ -1,4 +1,4 @@
-PyBlendVideo
+PyBlendEffects
 ============
 
 OOS ESA3
