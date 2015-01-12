@@ -1,4 +1,4 @@
-__author__ = 'Basti'
+__author__ = 'reinschs@fh-brandenburg.de | patrick.walther.1989@gmx.de | mommert@fh-brandenburg.de'
 
 import shutil, os.path
 
