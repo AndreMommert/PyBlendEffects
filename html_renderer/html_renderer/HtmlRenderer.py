@@ -1,6 +1,8 @@
 __author__ = 'reinschs@fh-brandenburg.de | patrick.walther.1989@gmx.de | mommert@fh-brandenburg.de'
 
-import shutil, os.path
+import shutil
+import os.path
+
 
 class HtmlRenderer:
 
@@ -14,9 +16,6 @@ class HtmlRenderer:
     def __init__(self):
         # sets default path for the rendered html
         self.set_copy_path(os.path.dirname(__file__) + '\\..\\rendered_html')
-        # remove existing rendered html in the default path
-        if os.path.isdir(self.get_copy_path()):
-            shutil.rmtree(self.get_copy_path())
         print('init html renderer')
 
     # add a step with the image path, title and text
@@ -27,6 +26,7 @@ class HtmlRenderer:
     def set_copy_path(self, new_path):
         self.copy_path = new_path
 
+    # changes the path where rendered html will be created
     def get_copy_path(self):
         return self.copy_path
 
@@ -37,17 +37,17 @@ class HtmlRenderer:
     def get_index_html_path(self):
         return self.get_copy_path() + '\\index.html'
 
-    def set_text(self, new_text):
-        self.title = new_text
-
-    def get_text(self):
-        return self.text
-
     def set_title(self, new_title):
         self.title = new_title
 
     def get_title(self):
         return self.title
+
+    def set_text(self, new_text):
+        self.title = new_text
+
+    def get_text(self):
+        return self.text
 
     def truncate_file(self, file):
         file.seek(0)
@@ -129,6 +129,9 @@ class HtmlRenderer:
         return data
 
     def render_html(self):
+        # removes already existing rendered html
+        if os.path.isdir(self.get_copy_path()):
+            shutil.rmtree(self.get_copy_path())
         self.copy_needed_files()
         self.fill_tabs()
         index_html_path = self.get_index_html_path()
