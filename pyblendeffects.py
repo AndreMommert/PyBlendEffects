@@ -17,6 +17,7 @@ __author__ = 'reinschs@fh-brandenburg.de | patrick.walther.1989@gmx.de | mommert
 import bpy
 import sys
 
+
 # Funktion für den Dissolve-Effekt
 def DissolveEffect(text):
     print('DissolveEffect')
@@ -97,6 +98,7 @@ def DissolveEffect(text):
 	bpy.context.object.data.shadow_soft_size = 3
 	bpy.data.lamps['Point'].node_tree.nodes['Emission'].inputs['Strength'].default_value = 5000
 	#bpy.data.node_groups["Shader Nodetree"].nodes["Emission"].inputs[1].default_value = 5000
+
 	bpy.ops.object.camera_add(view_align=True, enter_editmode=False, location=(0, 0, 0), rotation=(1.26972, 0.0140788, -0.375695), layers=(True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False))
 	#bpy.ops.view3d.camera_to_view()
 	bpy.ops.transform.translate(value=(0.32114, -0.119701, 0.0160501), constraint_axis=(False, False, False), constraint_orientation='GLOBAL', mirror=False, proportional='DISABLED', proportional_edit_falloff='SMOOTH', proportional_size=1, snap=False, snap_target='CLOSEST', snap_point=(0, 0, 0), snap_align=False, snap_normal=(0, 0, 0), texture_space=False, release_confirm=False)
