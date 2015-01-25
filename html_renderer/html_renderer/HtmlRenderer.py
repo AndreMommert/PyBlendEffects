@@ -98,7 +98,7 @@ class HtmlRenderer:
                 tab_content += '<div class="tab-pane" id="step' \
                                + str(count) \
                                + '">'\
-                               + '<img src="data\\img\\step' \
+                               + '<img style="max-width:100%;" src="data\\img\\step' \
                                + str(count) \
                                + '.jpg">' \
                                + '<h3>' \
@@ -137,10 +137,8 @@ class HtmlRenderer:
         index_html_path = self.get_index_html_path()
         with open(index_html_path, "r+") as myfile:
             data = myfile.read().replace('\n', '')
-            print(index_html_path)
             data = self.replace_data(data)
 
             self.truncate_file(myfile)
 
             myfile.write(data)
-            print(data)
