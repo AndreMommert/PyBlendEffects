@@ -16,7 +16,7 @@ __author__ = 'reinschs@fh-brandenburg.de | patrick.walther.1989@gmx.de | mommert
 
 import bpy
 import sys
-from HtmlRenderer import HtmlRenderer
+#from HtmlRenderer import HtmlRenderer
 
 # Funktion für den Dissolve-Effekt
 def DissolveEffect(text):
@@ -46,7 +46,7 @@ def DissolveEffect(text):
     bpy.ops.font.delete(type='PREVIOUS_OR_SELECTION')
     bpy.ops.font.delete(type='PREVIOUS_OR_SELECTION')
     for c in text:
-        bpy.ops.font.text_insert(text=c, accent=False))
+        bpy.ops.font.text_insert(text=c, accent=False)
     bpy.ops.object.editmode_toggle()
     bpy.context.window.screen.areas[1].spaces[0].context = 'DATA'
     bpy.context.object.data.extrude = 0.05
@@ -185,5 +185,5 @@ if __name__ == "__main__":
     elif arguments[4] == "glossy":
         GlossyEffect(text)
 
-    html_renderer = HtmlRenderer()
-    print(html_renderer.get_text())
+    #html_renderer = HtmlRenderer()
+    #print(html_renderer.get_text())
